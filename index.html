@@ -1,0 +1,29 @@
+// Declaraciones de variables
+let jugador;
+let armas = [];
+let compañeros = [];
+let zombies = [];
+let nivel = 1;
+
+// Función para inicializar el juego
+function inicializarJuego() {
+    jugador = new Soldado(); // Crea al soldado jugador
+    armas.push(new Arma()); // Agrega un arma al jugador
+    // Inicializa otros elementos del juego según sea necesario
+}
+
+// Función para manejar la oleada de zombies
+function manejarOleada() {
+    while (!oleadaDerrotada()) {
+        jugador.atacar(zombies); // El jugador ataca a los zombies
+        // Maneja otras acciones de los zombies y jugadores
+    }
+    // Código para pasar al siguiente nivel
+    nivel++;
+    aumentarDificultad();
+    // Agregar más armas, compañeros, etc. conforme avanza el juego
+}
+
+// Otras funciones y clases (Soldado, Arma, Compañero, Zombie, etc.) para implementar las mecánicas del juego.
+
+// Lógica de juego adicional como manejo de colisiones, interacciones, etc.
